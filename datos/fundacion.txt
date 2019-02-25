@@ -2999,7 +2999,7 @@ No hubo respuesta y Mallow alzó la vista.
 — ¿Está preocupado por algo? 
 — Me gustaría que Sutt estuviera aquí — fue la casi impertinente contestación. 
 — Oh, sí, y ahora oiremos otra conferencia sobre el frente interior. 
-— No, no la oiremos — replicó Jael—, pero usted es terco, Mallow. Puede haber descubierto la situación exterior en todos los detalles, pero nunca se ha preocupado de lo que ocurría en el planeta. 
+— Mallow No, no la oiremos — replicó Jael—, pero usted es terco, Mallow. Puede haber descubierto la situación exterior en todos los detalles, pero nunca se ha preocupado de lo que ocurría en el planeta. 
 — Bueno, éste es su trabajo, ¿no? ¿Para qué le hice ministro de Educación y Propaganda? 
 — Con toda claridad, para enviarme a una tumba temprana y miserable, dada la cooperación que usted me proporciona. Durante el último año, le he vuelto sordo con el creciente peligro de Sutt y sus religionistas. ¿De qué servirán sus planes, si Sutt fuerza una elección especial y le derroca? 
 — De nada, lo admito. 
@@ -3106,4 +3106,3 @@ KORELL  — … Y así, después de tres años de guerra, que seguramente fue la
 Enciclopedia Galáctica. 
 
 FIN
-
