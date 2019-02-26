@@ -5,6 +5,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
+import java.util.List;
 
 public class LectorPersona {
 
@@ -13,8 +14,14 @@ public class LectorPersona {
 		try (ObjectInputStream in = new ObjectInputStream(
 				new BufferedInputStream(
 						new FileInputStream(new File("datos/persona.dat"))));){
-			Persona persona = (Persona) in.readObject();
-			System.out.println(persona);
+			List<Persona> listaPersonas =  (List<Persona>) in.readObject();
+			
+			
+			for (Persona persona : listaPersonas) {
+				System.out.println(persona);
+			}
+			
+			listaPersonas.forEach(persona -> System.out.println(persona.getApellidosPersona()));
 			
 		} catch (IOException | ClassNotFoundException e) {
 			// TODO Auto-generated catch block
