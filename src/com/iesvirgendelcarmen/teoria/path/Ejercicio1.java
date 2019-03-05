@@ -1,6 +1,7 @@
 package com.iesvirgendelcarmen.teoria.path;
 
 import java.io.File;
+import java.nio.file.FileSystems;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
@@ -16,6 +17,10 @@ public class Ejercicio1 {
 		System.out.println(path.endsWith("fichero1.txt"));
 		File filePath = path.toFile();
 		System.out.println("Tamaño del fichero " + filePath.length() + " bytes");
+		//de acuerdo a documentación:
+		Path newPath = FileSystems.getDefault().getPath("datos", "fichero1.txt");
+		System.out.println(newPath);
+
 		
 	}
 
