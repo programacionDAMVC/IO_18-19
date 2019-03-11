@@ -60,7 +60,7 @@ public class Person {
 	}
 	@Override
 	public String toString() {
-		if (birthday != null) {
+		if (birthday != null) { //evitamos que si birthay es null, no se haga la llamada birthday.fortmat(...
 			DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy/MM/dd");
 			return String.format("%s,%s,%s,%s,%s,%s",
 					firstName, lastName, email, gender, birthday.format(formatter), country);
