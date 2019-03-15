@@ -30,12 +30,13 @@ public class Helper {
 		if (listOfLines.size() != 0)
 			listOfLines.remove(0);
 		//recorremos la lista de líneas leídas anteriormente
+		Person person;
+		String[] lineSplit;
 		for (String line : listOfLines) {
 			//cada línea se divide (split) por la ,
 			//Annabelle,Trimme,atrimmer7@biblegateway.com,Female,1992/10/06,China
 			//firstName, lastName, email, gender, birthday, country  (el split devuelve String[])
-			String[] lineSplit = line.split(",");
-			Person person;
+			lineSplit = line.split(",");
 			if (lineSplit[3].equals("Male"))
 				person = new Person(lineSplit[0], lineSplit[1],lineSplit[2],
 						Gender.Male,LocalDate.parse(lineSplit[4], formatter),lineSplit[5]);
@@ -44,7 +45,6 @@ public class Helper {
 						Gender.Female,LocalDate.parse(lineSplit[4], formatter),lineSplit[5]);
 			//añadimos cada objeto Person a lista
 			listOfPerson.add(person);
-
 		}
 		//devolvemos la lista
 		return listOfPerson;
