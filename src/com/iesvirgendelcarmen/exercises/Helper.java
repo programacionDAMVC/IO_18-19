@@ -11,7 +11,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Helper {
+	
 	public static DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy/MM/dd");
+	
 	public static int getYearsOfPeriod(LocalDate lDate) {
 		Period period = Period.between(lDate, LocalDate.now());
 		return period.getYears();
@@ -48,6 +50,15 @@ public class Helper {
 		}
 		//devolvemos la lista
 		return listOfPerson;
+	}
+	
+	public static void writeCSV (Staff staff, String fileName) {
+		//Creamos un nuevo Path con fileName + fecha (LocalDateTime.now().toString())
+		//obtener List<Person> del atributo staff, mediante getter
+		//recorremos la lista y añadimos person + \n a u StringBuilder
+		//quitar el último salto de línea
+		//usar bufferedwriter que proporciona el método newBufferedWriter de la clase Files
+		//usando el método print(String) lo volcamos al fichero
 	}
 	
 	public static void main(String[] args) throws IOException {
