@@ -14,6 +14,14 @@ public class Staff {
 		this.listOfPerson = listOfPerson;
 	}
 
+	
+	
+	public List<Person> getListOfPerson() {
+		return listOfPerson;
+	}
+
+
+
 	public boolean addPerson(Person person) {
 		return listOfPerson.add(person);
 	}
@@ -77,6 +85,15 @@ public class Staff {
 		}
 		return count;
 		
+	}
+	
+	//método que devuelva un objeto Person dado  un email (se supone único)
+	public Person getPersonByEmail(String email) {
+		for (Person person : listOfPerson) {
+			if (person.getEmail().equals(email))
+				return person;
+		}
+		return null;
 	}
 	
 	public static void main(String[] args) {
