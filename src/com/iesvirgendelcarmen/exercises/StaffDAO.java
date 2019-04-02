@@ -49,6 +49,10 @@ public class StaffDAO {
 		}
 		return rows != 0;
 	}
+	
+	public boolean removePerson(Person person) {
+		return false;
+	}
 
 	public static void main(String[] args) {
 		Person p1 = new Person("firstname", "lastName", "email", 
