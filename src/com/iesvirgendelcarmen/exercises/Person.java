@@ -12,7 +12,8 @@ public class Person {
 	private LocalDate birthday;
 	private String country;
 
-	public Person(String firstName, String lastName, String email, Gender gender, LocalDate birthday, String country) {
+	public Person(String firstName, String lastName, String email, Gender gender,
+			LocalDate birthday, String country) {
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.email = email;
