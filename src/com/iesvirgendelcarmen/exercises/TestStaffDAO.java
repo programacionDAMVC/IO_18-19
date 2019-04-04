@@ -1,4 +1,5 @@
 package com.iesvirgendelcarmen.exercises;
+import java.sql.SQLException;
 //import java.io.IOException;
 import java.time.LocalDate;
 import java.util.List;
@@ -25,8 +26,7 @@ public class TestStaffDAO {
 			//				break;
 			switch (iOption) {
 			case 0:
-				//		if (fileChanged)
-				//			exit();
+				exit();
 				break;
 			case 1:
 				deletePerson();
@@ -41,7 +41,7 @@ public class TestStaffDAO {
 				deleteByEmail();
 				break;
 			case 5:
-				//		getNumberOfPersonByAge();
+				getNumberOfPersonByAge();
 				break;
 			case 6:
 				addPerson();
@@ -61,31 +61,28 @@ public class TestStaffDAO {
 
 	}
 	//
-		private static void getPersonByEmail() {
-			String email;
-			do {
-				System.out.println("Enter email");
-				email = sc.next();
-			} while (!email.matches("^\\w+@[a-zA-Z_]+?\\.[a-zA-Z]{2,3}$"));
-			Person person = staffDAO.getPersonByEmail(email);
-			if (person != null)
-				System.out.println(person);
-			else
-				System.out.println("Person not found");
-			
-		}
+	private static void getPersonByEmail() {
+		String email;
+		do {
+			System.out.println("Enter email");
+			email = sc.next();
+		} while (!email.matches("^\\w+@[a-zA-Z_]+?\\.[a-zA-Z]{2,3}$"));
+		Person person = staffDAO.getPersonByEmail(email);
+		if (person != null)
+			System.out.println(person);
+		else
+			System.out.println("Person not found");
 
-	//	private static void exit() {
-	//		System.out.println("Enter filename:");
-	//		String fileName = sc.next();
-	//		try {
-	//			Helper.writeCSV(staff, fileName);
-	//		} catch (IOException e) {
-	//			// TODO Auto-generated catch block
-	//			e.printStackTrace();
-	//		}
-	//		
-	//	}
+	}
+
+		private static void exit() {
+			try {
+				StaffDAO.connection.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
 
 	private static void addPerson() {
 		System.out.println("Enter first name");
@@ -158,21 +155,21 @@ public class TestStaffDAO {
 
 	}
 	//
-	//	private static void getNumberOfPersonByAge() {
-	//		int iAge;
-	//		String sAge;
-	//		do {
-	//			System.out.println("Enter age:");
-	//			sAge = sc.next();
-	//			if (sAge.matches("[0-9]{1,2}")){
-	//				iAge = Integer.parseInt(sAge);
-	//				break;
-	//			}
-	//		} while(true);
-	//		System.out.printf("Number of people older than %d are %d%n",
-	//				iAge, staff.getNumberOfPeopleByAge(iAge));
-	//	}
-	//
+	private static void getNumberOfPersonByAge() {
+		int iAge;
+		String sAge;
+		do {
+			System.out.println("Enter age:");
+			sAge = sc.next();
+			if (sAge.matches("[0-9]{1,2}")){
+				iAge = Integer.parseInt(sAge);
+				break;
+			}
+		} while(true);
+		System.out.printf("Number of people older than %d are %d%n",
+				iAge, staffDAO.getNumberOfPeopleByAge(iAge));
+	}
+
 	private static void listByGender() {
 		String gender;
 		List<Person> listByGender;

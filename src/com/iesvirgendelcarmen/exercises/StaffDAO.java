@@ -6,13 +6,14 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
 public class StaffDAO {
 
-	Connection connection;
+	public static Connection connection;
 
 	public StaffDAO () {
 		try {
@@ -200,6 +201,25 @@ public class StaffDAO {
 			e.printStackTrace();
 		}
 		return person;
+	}
+
+	public int getNumberOfPeopleByAge(int age) {
+		// SELECT birthday FROM person;
+		int count = 0;
+		String sqlSelect = "SELECT birthday FROM person;";
+		try (Statement statement = connection.createStatement();){
+			ResultSet rsSet = statement.executeQuery(sqlSelect);
+			while(rsSet.next()) {
+				LocalDate ldDate = LocalDate.parse(
+						rsSet.getString("birthday"),Helper.formatter);
+				if (Helper.getYearsOfPeriod(ldDate) > age )
+					count++;
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return count;
 	}
 
 }
